@@ -19,17 +19,18 @@ class Recipes{
             snapshot.docChanges().forEach( change => {
                 if(change.type === "added"){
                     //Pass a callback function which updates the UI
-                    callback(change.doc.data());
+                    callback(change.doc.data(),change.doc.id);
                 }
             })
         })
+       
     }
-    async removeRecipes(){
-
+    async removeRecipes(id){
+        console.log(this.recipes.doc(),"is going get deleted");
+        this.recipes.doc(id).delete();
+       
     }
 }
 
-const recipe_database = new Recipes();
-recipe_database.getRecipes((data) => {
-    console.log(data);
-})
+
+
