@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe holder</title>
+</head>
+<body>
+    <h1>Recipes</h1>
+    <form>
+        <div>
+            <label for="name">Enter name of recipe: </label>
+            <input type="name" id="name">
+        </div>
+        <div>
+            <button id="add">Add Ingredient</button>
+            <input type="submit">
+        </div>
+    </form>
+    <div id="cards">
+        
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+      // your individual firebase code
+        apiKey: "AIzaSyBhVfmi0RJXxPxywodGdDuTy1t1e6Aoyng",
+        authDomain: "test-database-393b6.firebaseapp.com",
+        projectId: "test-database-393b6",
+        storageBucket: "test-database-393b6.appspot.com",
+        messagingSenderId: "264993380898",
+        appId: "1:264993380898:web:6642a2e73977802afc487b",
+        measurementId: "G-RSZEXF1N45"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+    <script src="scripts/recipes.js"></script>
+    <script src="scripts/ui.js"></script>
+</body>
+</html>
